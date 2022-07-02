@@ -1,3 +1,5 @@
+const dotenv = require('dotenv')
+dotenv.config()
 
 require('./config/db');
 
@@ -10,9 +12,10 @@ const UserRouter = require('./api/User');
 const bodyParser = require('express').json;
 app.use(bodyParser());
 
-app.get('/home', (req, res) => {
-    res.status(200).send('Hellow Wolrd')
-})
+// app.get('/home', (req, res) => {
+//     res.status(200).send('Hellow Wolrd')
+// })
+
 app.use('/user', UserRouter)
 
 app.listen(port, () => {
